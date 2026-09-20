@@ -1,0 +1,61 @@
+name: Daily Log Automation
+
+on:
+  schedule:
+    # 08:30 UTC daily — 14:00 IST / 01:30 PT. Adjust via https://crontab.guru
+    - cron: "30 8 * * *"
+  workflow_dispatch: # manual trigger from Actions tab
+
+# IMPORTANT: Allows the runner to push commits back to the repo using GITHUB_TOKEN
+permissions:
+  contents: write
+
+concurrency:
+  group: daily-log
+  cancel-in-progress: false
+
+jobs:
+  update-log:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          # Use GITHUB_TOKEN for push; no PAT needed
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      # Alternative: use Node.js — uncomment to run bot.js instead
+      # - name: Set up Node.js
+      #   uses: actions/setup-node@v4
+      #   with:
+      #     node-version: "20"
+
+      - name: Configure Git identity
+        run: |
+          # Use repo owner's verified email so contributions count.
+          # Replace with your noreply if you prefer privacy:
+          # 12345678+USERNAME@users.noreply.github.com
+          git config user.name "automation-bot"
+          git config user.email "4bd23cs046@bietdvg.edu"
+          git config pull.rebase true
+          git config rebase.autoStash true
+
+      - name: Run automation bot (Python)
+        run: |
+          python3 bot.py
+        # To use Node.js instead, swap to:
+        # - name: Run automation bot (Node)
+        #   run: node bot.js
+
+      - name: Verify push
+        run: |
+          git log --oneline -3
+          echo "--- learning-log tail ---"
+          tail -n 5 learning-log.txt

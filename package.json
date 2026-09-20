@@ -1,0 +1,12 @@
+{
+  "name": "open-source-git-automation-cron-tracker",
+  "version": "1.0.0",
+  "description": "Live demonstration of Git internals, cron scheduling, and GitHub Actions automation",
+  "type": "module",
+  "scripts": {
+    "bot": "node bot.js"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
