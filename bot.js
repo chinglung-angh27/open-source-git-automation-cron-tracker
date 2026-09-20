@@ -171,7 +171,7 @@ function main() {
 
   const email = spawnSync("git config user.email", { shell: true, cwd: REPO_ROOT, encoding: "utf-8" }).stdout.trim();
   const name = spawnSync("git config user.name", { shell: true, cwd: REPO_ROOT, encoding: "utf-8" }).stdout.trim();
-  if (!email) { console.log("No git user.email — setting bot identity."); run('git config user.email "4bd23cs046@bietdvg.edu"'); }
+  if (!email) { console.log("No git user.email — setting bot identity."); run('git config user.email "chingangh5@gmail.com"'); }
   if (!name) run('git config user.name "automation-bot"');
 
   syncWithRemote(branch);

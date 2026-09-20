@@ -206,7 +206,7 @@ def main() -> None:
     name = run(["git", "config", "user.name"], capture=True, check=False).stdout.strip()
     if not email:
         print("No git user.email — setting bot identity. Update to your GitHub email for contributions to count.")
-        run(["git", "config", "user.email", "4bd23cs046@bietdvg.edu"])
+        run(["git", "config", "user.email", "chingangh5@gmail.com"])
     if not name:
         run(["git", "config", "user.name", "automation-bot"])
 
