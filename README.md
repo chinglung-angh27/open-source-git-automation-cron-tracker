@@ -20,6 +20,18 @@ This lab is a **hiring signal for DevOps basics**, not a replacement for product
 
 Use this repo to answer "can you automate Git reliably?" — judge real product skill from my pinned repos.
 
+### Pinned Work — Start Here (Product Repos)
+
+> If you're a recruiter, start with these — this lab is supporting evidence.
+
+| Repo | What it shows |
+|------|---------------|
+| [**persona-forge**](https://github.com/chinglung-angh27/persona-forge) — Persona Forge — train and simulate AI personas | Product / AI — main portfolio project |
+| [**ToneSense**](https://github.com/chinglung-angh27/ToneSense) | App / UX — sentiment & tone analysis |
+| [**Globe-Weather-Explorer**](https://github.com/chinglung-angh27/Globe-Weather-Explorer) | Data / Viz — weather explorer |
+
+→ Full profile: [github.com/chinglung-angh27](https://github.com/chinglung-angh27) (pin order: persona-forge → ToneSense → Globe-Weather-Explorer → … → this lab last)
+
 ---
 
 ## How It Works
