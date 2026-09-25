@@ -9,3 +9,4 @@
 [2026-09-22 13:33:48 UTC] Resilience: Handle diverged history before push, or you'll loop on non-fast-forward errors.
 [2026-09-23 13:46:01 UTC] DevOps note: Cron runs in UTC on GitHub Actions — always reason in UTC, display in local.
 [2026-09-24 13:41:05 UTC] Rebase mental model: Replay local commits on top of remote — cleaner than merging bot noise.
+[2026-09-25 14:02:28 UTC] Automation: Idempotency matters — a cron job should be safe to re-run without side effects.
